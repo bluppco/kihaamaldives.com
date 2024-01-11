@@ -1,0 +1,10 @@
+---
+const { href } = Astro.props
+---
+<div>
+    <a href={ href }>
+        <button class="h-10 px-8 bg-yellow-500 text-white text-sm uppercase font-medium tracking-wide">
+            <slot/>
+        </button>
+    </a>
+</div>

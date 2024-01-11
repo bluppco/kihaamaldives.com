@@ -1,0 +1,36 @@
+---
+// IMPORTING ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+// IMPORTING ASTRO COMPONENTS
+import HeaderItem from "./HeaderItem.astro"
+
+// IMPORTING JSX COMPONENTS
+import HeaderMobile from "./HeaderMobile"
+
+// IMPORTING ASTRO ATOMS
+import Button from "../../atoms/buttons/Vanilla.astro"
+---
+<header class="hidden bg-black h-16 md:flex items-center">
+    <Container>
+        <nav class="h-full flex justify-between items-center">
+            <div class="w-20 aspect-[5/2]">
+                <img
+                    src="/logo/kmr_logo.png"
+                    alt=""
+                    class="w-full h-full"
+                />
+            </div>
+            <ul class="flex gap-8 items-center">
+                <HeaderItem>Classic</HeaderItem>
+                <HeaderItem>Luxury</HeaderItem>
+                <HeaderItem>Hanifaru Bay</HeaderItem>
+                <HeaderItem>Taste of culture</HeaderItem>
+                <HeaderItem>Horses in Maldives</HeaderItem>
+                <HeaderItem>More</HeaderItem>
+            </ul>
+            <Button>Book Now</Button>
+        </nav>
+    </Container>
+</header>
+<HeaderMobile client:load />
