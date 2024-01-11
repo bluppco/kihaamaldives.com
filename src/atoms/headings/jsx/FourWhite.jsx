@@ -1,7 +1,7 @@
 const HeadingFourWhiteJSX = ( props ) => {
 
     return(
-        <h4 class="font-josefin font-light text-white text-lg text-center uppercase">
+        <h4 className="font-josefin font-light text-white text-lg text-center uppercase">
             { props.children }
         </h4>
     )
