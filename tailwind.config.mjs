@@ -14,7 +14,21 @@ export default {
 
 		},
 
-		extend: {},
+		extend: {
+
+			fontFamily: {
+
+				"josefin": [ "Josefin Sans", "sans-serif" ],
+
+			},
+
+			colors: {
+
+				"kmr_green": "#51c2b9",
+
+			}
+
+		},
 	},
 	plugins: [],
 }
