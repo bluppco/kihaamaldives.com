@@ -1,0 +1,27 @@
+---
+// IMPORTING ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+---
+<section class="h-[500px] w-full py-20 relative" style=`background-image: url(${ "fixed-image-1.jpg" })`>
+    <Container>
+        <section class="grid grid-cols-3 z-10">
+            <section>
+                <div class="h-96 w-full">
+                    <img
+                        src="/map.png"
+                        alt=""
+                        class="w-full h-full object-contain"
+                    />
+                </div>
+            </section>
+            <section class="col-span-2 flex flex-col justify-center space-y-4">
+                <div class="border-b pb-2 border-gray-400">
+                    <h2 class="text-kmr_green uppercase text-3xl font-josefin">Unspoilt – A UNESCO Biosphere Reserve</h2>
+                </div>
+                <p>Located in the beautiful Baa Atoll, Kihaa Resort is set on a stunning Maldivian island, ringed by perfect white sandy beaches and turquoise lagoons. On the edge of UNESCO world heritage site of Hanifaru Bay, famous for incredible manta ray aggregations.</p>
+                <p>Just a 20-minute domestic transfer from Velana International Airport, your holiday experience starts with a journey soaring over the famous Maldives Atoll, where upon arrival our team will greet you with warm smiles, and cold drinks.</p>
+            </section>
+        </section>
+    </Container>
+    <section class="h-full w-full bg-white/80 absolute top-0"></section>
+</section>
