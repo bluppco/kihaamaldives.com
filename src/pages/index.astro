@@ -5,10 +5,13 @@ import Layout from "../layouts/Layout.astro"
 // IMPORTING ASTRO COMPONENTS
 import Header from "../components/header/Header.astro"
 import JewelOfTheOceans from "../components/home/JewelOfTheOceans.astro"
+import UnescoBiosphereReserve from "../components/home/UnescoBiosphereReserve.astro"
 import Accommodation from "../components/home/Accommodation.astro"
+import Experiences from "../components/home/Experiences.astro"
 
 // IMPORTING JSX COMPONENTS
 import HeroCarousel from "../components/home/HeroCarousel"
+import ImageBanner from "../components/home/ImageBanner.astro"
 ---
 <Layout
 	title="Kihaa Maldives Resort - Luxury 5 Star Maldives Resort in Baa Atoll"
@@ -20,5 +23,13 @@ import HeroCarousel from "../components/home/HeroCarousel"
 		<HeroCarousel client:load />
 	</section>
 	<JewelOfTheOceans />
+	<UnescoBiosphereReserve />
 	<Accommodation />
+	<ImageBanner
+		src="/fixed-image-1.jpg"
+	/>
+	<Experiences />
+	<ImageBanner
+		src="/fixed-image-2.jpg"
+	/>
 </Layout>
