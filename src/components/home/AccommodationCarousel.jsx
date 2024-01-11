@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel'
 import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
 // IMPORTING JSX ATOMS
-import HeadingFourJSX from "../../atoms/headings/jsx/Four"
+import HeadingFourWhiteJSX from "../../atoms/headings/jsx/FourWhite"
 
 const HeroCarousel = ( props ) => {
 
@@ -33,7 +33,7 @@ const HeroCarousel = ( props ) => {
                                     />
                                 </div>
                                 <div className="absolute bottom-0 flex justify-center w-full py-2 bg-black/20">
-                                <HeadingFourJSX>{ value.title }</HeadingFourJSX>
+                                <HeadingFourWhiteJSX>{ value.title }</HeadingFourWhiteJSX>
                                 </div>
                             </div>
                         )
