@@ -12,11 +12,11 @@ const HeaderMobile = () => {
         <header className="md:hidden bg-white px-6 py-4 fixed z-20 w-full border-b border-b-zinc-200">
             <div className="flex justify-between items-center z-20">
                 <a href="/">
-                    <div class="w-20 aspect-[5/2]">
+                    <div className="w-20 aspect-[5/2]">
                         <img
                             src="/logo/kmr_logo.png"
                             alt=""
-                            class="w-full h-full"
+                            className="w-full h-full"
                         />
                     </div>
                 </a>

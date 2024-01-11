@@ -25,6 +25,7 @@ export default {
 			colors: {
 
 				"kmr_green": "#51c2b9",
+				"kmr_dim_gray": "#696969",
 
 			}
 
