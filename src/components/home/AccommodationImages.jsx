@@ -25,17 +25,17 @@ const AccommodationImages = ( props ) => {
 
     return (
         <>
-            <section class="grid grid-cols-5 gap-[1px] py-[1px]">
+            <section className="grid grid-cols-5 gap-[1px] py-[1px]">
                 {
 
                     data.map( ( value, index ) => {
 
                         return(
-                            <div class="w-full aspect-[4/3] bg-zinc-200 overflow-hidden" key={ "accommodation-images-" + index } onClick={ () => openImageModal( image ) }>
+                            <div className="w-full aspect-[4/3] bg-zinc-200 overflow-hidden" key={ "accommodation-images-" + index } onClick={ () => openImageModal( image ) }>
                                 <img
                                     src={ value.image }
                                     alt=""
-                                    class="w-full h-full object-cover hover:scale-125 overflow-hidden transition-all duration-700"
+                                    className="w-full h-full object-cover hover:scale-125 overflow-hidden transition-all duration-700"
                                 />
                             </div>
                         )
