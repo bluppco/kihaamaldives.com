@@ -15,6 +15,7 @@ import ImageBanner from "../components/home/ImageBanner.astro"
 
 // IMPORTING JSX COMPONENTS
 import HeroCarousel from "../components/home/HeroCarousel"
+import HeaderBanner from "../components/common/HeaderBanner.astro"
 ---
 <Layout
 	title="Kihaa Maldives Resort - Luxury 5 Star Maldives Resort in Baa Atoll"
@@ -22,6 +23,7 @@ import HeroCarousel from "../components/home/HeroCarousel"
 	image=""
 >
 	<section class="md:h-screen md:max-h-screen overflow-hidden relative">
+		<HeaderBanner />
 		<Header />
 		<HeroCarousel client:load />
 	</section>
