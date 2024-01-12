@@ -25,22 +25,19 @@ const data = Array(9).fill({
                 <SmallParagraph>Make your stay on Kihaa one full of experiences and adventures that will provide memories to last a lifetime. From exploring beneath the waves on the amazing coral reefs with Ocean dimensions dive school, to relaxing in the award-winning Kihaa Spa every moment at Kihaa is one that you will want to last a lifetime.</SmallParagraph>
             </div>
         </section>
-        <section class="grid md:grid-cols-3 gap-4">
-            {
-
-                data.map( ( value ) => {
-
-                    return(
-                        <ExperienceCard
-                            src={ value.cover }
-                            title={ value.title }
-                            button_text={ value.button_text }
-                        />
-                    )
-
-                })
-
-            }
+        <section class="mt-10 gap-4 grid grid-flow-row-dense grid-cols-3 grid-rows-3">
+            <div class="w-full bg-zinc-200 col-span-1 aspect-square overflow-hidden">
+                <ExperienceCard
+                    src={ data[0].cover }
+                    title={ data[0].title }
+                    button_text={ data[0].button_text }
+                />
+            </div>
+            <div class="col-span-1 w-full bg-zinc-200 aspect-square">02</div>
+            <div class="col-span-1 w-full bg-zinc-200 row-span-2">03</div>
+            <div class="row-span-2 col-span-1 bg-zinc-200">04</div>
+            <div class="col-span-1 w-full bg-zinc-200 aspect-square">05</div>
+            <div class="col-span-2 row-span-1 w-full bg-zinc-200">06</div>
         </section>
     </section>
 </Container>
