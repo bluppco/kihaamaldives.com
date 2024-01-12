@@ -5,9 +5,9 @@ import GrayButtonJSX from "../../atoms/buttons/jsx/Gray"
 const NewsletterForm = ( props ) => {
 
     return(
-        <section className="pt-2">
+        <section className="pt-4 space-y-2">
             <div className="flex items-center">
-                <p className="text-white text-sm">Email Address</p><sup className="text-red-500">*</sup>
+                <p className="text-white text-sm font-montserrat">Email Address</p><sup className="text-red-500">*</sup>
             </div>
             <div className="flex gap-2 items-center">
                 <input
