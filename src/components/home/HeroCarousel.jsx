@@ -16,7 +16,7 @@ const HeroCarousel = ( props ) => {
 
     return (
         <section className="w-full h-[400px] md:h-full md:mt-16 group">
-            <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ false } infiniteLoop={ true } showIndicators={ true }
+            <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }
                 renderArrowPrev={( onClickHandler, hasPrev, label ) =>
                 hasPrev && (
                         <button
