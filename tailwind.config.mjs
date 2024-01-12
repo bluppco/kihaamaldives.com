@@ -19,6 +19,7 @@ export default {
 			fontFamily: {
 
 				"josefin": [ "Josefin Sans", "sans-serif" ],
+				"montserrat": [ "Montserrat", "sans-serif" ]
 
 			},
 
