@@ -1,0 +1,11 @@
+---
+// IMPORTING ASTRO COMPONENTS
+import FooterTitle from "./FooterTitle.astro"
+import NewsletterForm from "./NewsletterForm"
+---
+<section class="space-y-4">
+    <FooterTitle>Newsletter</FooterTitle>
+    <div>
+        <NewsletterForm client:load />
+    </div>
+</section>

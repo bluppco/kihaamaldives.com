@@ -1,22 +1,19 @@
-// IMPORTING JSX ATOMS
-
-import GrayButtonJSX from "../../atoms/buttons/jsx/Gray"
-
 const NewsletterForm = ( props ) => {
 
     return(
-        <section className="flex justify-center md:justify-start">
-            <section className="pt-4 space-y-2">
-                <div className="flex items-center">
-                    <p className="text-white text-sm font-montserrat">Email Address</p><sup className="text-red-500">*</sup>
-                </div>
-                <div className="flex gap-2 items-center">
+        <section className="flex justify-center md:justify-start w-full">
+            <section className="border rounded border-slate-300 shadow-md p-5 relative w-full space-y-4 bg-gray-200">
+                <div className="text-slate-700 font-montserrat font-semibold">Sign-up for Exclusive Offers</div>
+                <div className="space-y-3">
                     <input
                         type="text"
-                        className="h-8 w-40 border border-zinc-400 px-2 text-sm text-black"
+                        className="rounded text-slate-700 w-full text-xs h-10 border border-slate-300 px-4"
                         name="email"
+                        placeholder="Email address"
                     />
-                    <GrayButtonJSX>Subscribe</GrayButtonJSX>
+                    <button className="uppercase rounded text-slate-50 w-full text-sm h-10 bg-kmr_green tracking-widest font-montserrat font-medium" onClick={ () => triggerFormPOST() }>
+                        Subscribe
+                    </button>
                 </div>
             </section>
         </section>
