@@ -13,12 +13,12 @@ import DownloadApp from "./DownloadApp.astro"
 // IMPORTING JSX COMPONENTS
 import NewsletterForm from "./NewsletterForm"
 ---
-<footer class="bg-kmr_dim_gray">
+<footer>
     <section class="bg-kmr_dim_gray py-10">
         <Container>
-            <section class="grid grid-cols-2 gap-10">
-                <section class="grid grid-cols-6 gap-2">
-                    <section class="col-span-2">
+            <section class="grid md:grid-cols-2 gap-10">
+                <section class="grid md:grid-cols-6 gap-2">
+                    <section class="md:col-span-2 mx-auto md:mx-0">
                         <a href="/">
                             <div class="w-52 aspect-[3/1]">
                                 <img
@@ -29,7 +29,7 @@ import NewsletterForm from "./NewsletterForm"
                             </div>
                         </a>
                     </section>
-                    <section class="col-span-4 space-y-20">
+                    <section class="md:col-span-4 space-y-20">
                         <div class="space-y-4">
                             <FooterTitle>Reservations</FooterTitle>
                             <ul class="space-y-1">
@@ -47,7 +47,7 @@ import NewsletterForm from "./NewsletterForm"
                         </div>
                     </section>
                 </section>
-                <section class="grid grid-cols-2 gap-10">
+                <section class="grid md:grid-cols-2 gap-10">
                     <section class="space-y-4">
                         <FooterTitle>Awards</FooterTitle>
                         <Awards />
