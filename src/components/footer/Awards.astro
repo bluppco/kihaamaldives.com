@@ -1,18 +1,9 @@
 ---
 // IMPORTING ASTRO COMPONENTS
 import AwardImage from "./AwardImage.astro"
+import FooterTitle from "./FooterTitle.astro"
 ---
-<div class="flex gap-6 items-center justify-center md:justify-start">
-    <AwardImage
-        src="/images/award-1.png"
-        alt=""
-    />
-    <AwardImage
-        src="/images/award-2.png"
-        alt=""
-    />
-    <AwardImage
-        src="/images/award-3.png"
-        alt=""
-    />
-</div>
+<section class="space-y-4">
+    <FooterTitle>Awards</FooterTitle>
+    <AwardImage />
+</section>

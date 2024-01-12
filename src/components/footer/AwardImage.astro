@@ -1,10 +1,18 @@
 ---
-const { src, alt } = Astro.props
+// IMPORTING ASTRO COMPONENTS
+import AwardImageItem from "./AwardImageItem.astro"
 ---
-<div class="w-20 aspect-square">
-    <img
-        src={ src }
-        alt={ alt }
-        class="w-full h-full object-contain"
+<div class="flex gap-6 items-center justify-center md:justify-start">
+    <AwardImageItem
+        src="/images/award-1.png"
+        alt=""
+    />
+    <AwardImageItem
+        src="/images/award-2.png"
+        alt=""
+    />
+    <AwardImageItem
+        src="/images/award-3.png"
+        alt=""
     />
 </div>

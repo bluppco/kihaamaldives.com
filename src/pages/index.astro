@@ -10,18 +10,20 @@ import Accommodation from "../components/home/Accommodation.astro"
 import Experiences from "../components/home/Experiences.astro"
 import InstagramFeed from "../components/home/InstagramFeed.astro"
 import Footer from "../components/footer/Footer.astro"
+import MakeReservation from "../components/home/MakeReservation.astro"
+import ImageBanner from "../components/home/ImageBanner.astro"
 
 // IMPORTING JSX COMPONENTS
 import HeroCarousel from "../components/home/HeroCarousel"
-import ImageBanner from "../components/home/ImageBanner.astro"
-import MakeReservation from "../components/home/MakeReservation"
+import HeaderBanner from "../components/common/HeaderBanner.astro"
 ---
 <Layout
 	title="Kihaa Maldives Resort - Luxury 5 Star Maldives Resort in Baa Atoll"
 	description="Kihaa Resort is the most naturally beautiful and romantic island in Maldives, located next to the world famous UNESCO Biosphere Hanifaru Bay"
 	image=""
 >
-	<section class="md:h-screen md:max-h-screen overflow-hidden">
+	<section class="md:h-screen md:max-h-screen overflow-hidden relative">
+		<HeaderBanner />
 		<Header />
 		<HeroCarousel client:load />
 	</section>
