@@ -1,0 +1,85 @@
+---
+// IMPORTING ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+// IMPORTING ASTRO COMPONENTS
+import FooterTitle from "./FooterTitle.astro"
+import FooterItem from "./FooterItem.astro"
+import SocialIcons from "./SocialIcons.astro"
+import Awards from "./Awards.astro"
+import FooterItemUppercase from "./FooterItemUppercase.astro"
+import DownloadApp from "./DownloadApp.astro"
+
+// IMPORTING JSX COMPONENTS
+import NewsletterForm from "./NewsletterForm"
+---
+<footer>
+    <section class="bg-kmr_dim_gray py-10">
+        <Container>
+            <section class="grid md:grid-cols-2 gap-10">
+                <section class="grid md:grid-cols-6 gap-2">
+                    <section class="md:col-span-2 mx-auto md:mx-0">
+                        <a href="/">
+                            <div class="w-52 aspect-[3/1]">
+                                <img
+                                    src="/logo/kmr_logo.png"
+                                    alt="logo"
+                                    class="w-full h-full"
+                                />
+                            </div>
+                        </a>
+                    </section>
+                    <section class="md:col-span-4 space-y-20">
+                        <div class="space-y-4">
+                            <FooterTitle>Reservations</FooterTitle>
+                            <ul class="space-y-1">
+                                <FooterItem href="tel:+9607909181">+960 790 9181</FooterItem>
+                                <FooterItem href="mailto:kihaamaldives@coralislandresorts.com">kihaamaldives@coralislandresorts.com</FooterItem>
+                                <FooterItem>Online Booking</FooterItem>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <FooterTitle>Connect</FooterTitle>
+                            <ul class="space-y-4">
+                                <FooterItem>Follow us on social media...</FooterItem>
+                                <SocialIcons />
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+                <section class="grid md:grid-cols-2 gap-10">
+                    <section class="space-y-4">
+                        <FooterTitle>Awards</FooterTitle>
+                        <Awards />
+                    </section>
+                    <section class="space-y-4">
+                        <FooterTitle>Quick Links</FooterTitle>
+                        <ul class="space-y-1">
+                            <FooterItemUppercase>Wine and Dine</FooterItemUppercase>
+                            <FooterItemUppercase>Experiences</FooterItemUppercase>
+                            <FooterItemUppercase>Media</FooterItemUppercase>
+                            <FooterItemUppercase>Contact Us</FooterItemUppercase>
+                            <FooterItemUppercase>Privacy Policy</FooterItemUppercase>
+                        </ul>
+                    </section>
+                    <section class="space-y-4">
+                        <FooterTitle>Kihaa App</FooterTitle>
+                        <ul>
+                            <FooterItem>Download Kihaa app for your mobile.</FooterItem>
+                        </ul>
+                        <DownloadApp />
+                    </section>
+                    <section class="space-y-4">
+                        <FooterTitle>Newsletter</FooterTitle>
+                        <NewsletterForm client:load />
+                    </section>
+                </section>
+            </section>
+        </Container>
+    </section>
+    <section class="bg-zinc-800 py-4">
+        <Container>
+            <p class="text-white uppercase text-xs text-center font-montserrat tracking-wider">&copy; Copyright { new Date().getFullYear() } - Kihaa Maldives Resort & Spa by Coral Island Resorts</p>
+        </Container>
+    </section>
+</footer>

@@ -1,0 +1,8 @@
+---
+const { href } = Astro.props
+---
+<li class="text-sm text-white hover:text-white/80 tracking-wider uppercase hover:cursor-pointer font-montserrat">
+    <a href={ href }>
+        <slot/>
+    </a>
+</li>

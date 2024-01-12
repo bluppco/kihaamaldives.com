@@ -1,0 +1,50 @@
+---
+// IMPORTING ASTRO ATOMS
+import HeadingOne from "../../atoms/headings/One.astro"
+import HeadingTwo from "../../atoms/headings/Two.astro"
+import HeadingThree from "../../atoms/headings/Three.astro"
+import Paragraph from "../../atoms/paragraph/Vanilla.astro"
+
+// IMPORTING ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+const awards = Array(3).fill({
+
+    image: "award.png"
+
+})
+---
+<Container>
+    <section class="flex flex-col gap-8 md:gap-10 items-center py-8 md:py-20 md:max-w-6xl mx-auto">
+        <div class="flex flex-col gap-4 md:gap-6 items-center">
+            <div>
+                <HeadingTwo>Jewel of the Oceans</HeadingTwo>
+                <HeadingOne>Kihaa Maldives</HeadingOne>
+            </div>
+            <Paragraph>Kihaa Maldives is one of the most naturally beautiful Islands in the Maldives with a stunning lagoon with a thriving coral house reef. Located on the world famous UNESCO heritage site of Hanifaru Bay it is also one of the best destinations for those wanting to experience the incredible manta ray.</Paragraph>
+        </div>
+        <div>
+            <HeadingThree>Your Award Winning Maldives Resort</HeadingThree>
+            <Paragraph>Kihaa has repeatedly been recognised for the outstanding service provided for our guests</Paragraph>
+            <div class="flex gap-12 md:gap-28 justify-center items-center pt-6">
+                {
+
+                    awards.map( ( value ) => {
+
+                        return(
+                            <div class="size-20 md:size-28">
+                                <img
+                                    src={ value.image }
+                                    alt=""
+                                    class="size-20 md:size-28"
+                                />
+                            </div>
+                        )
+
+                    })
+
+                }
+            </div>
+        </div>
+    </section>
+</Container>

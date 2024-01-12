@@ -1,0 +1,12 @@
+.control-dots{
+    bottom: 80px !important;
+}
+.carousel .control-dots .dot{
+    /* background-color: #FFFFFF !important; */
+    box-shadow: none;
+    width: 10px;
+    height: 10px;
+}
+.carousel.carousel-slider{
+    overflow: inherit !important;
+}

@@ -1,10 +1,41 @@
 ---
-import Container from "../layouts/Container.astro";
-import Layout from "../layouts/Layout.astro";
+// IMPORTING ASTRO LAYOUTS
+import Layout from "../layouts/Layout.astro"
 
+// IMPORTING ASTRO COMPONENTS
+import Header from "../components/header/Header.astro"
+import JewelOfTheOceans from "../components/home/JewelOfTheOceans.astro"
+import UnescoBiosphereReserve from "../components/home/UnescoBiosphereReserve.astro"
+import Accommodation from "../components/home/Accommodation.astro"
+import Experiences from "../components/home/Experiences.astro"
+import InstagramFeed from "../components/home/InstagramFeed.astro"
+import Footer from "../components/footer/Footer.astro"
+
+// IMPORTING JSX COMPONENTS
+import HeroCarousel from "../components/home/HeroCarousel"
+import ImageBanner from "../components/home/ImageBanner.astro"
+import MakeReservation from "../components/home/MakeReservation"
 ---
-<Layout>
-	<Container>
-		<section>Kihaa Maldives</section>
-	</Container>
+<Layout
+	title="Kihaa Maldives Resort - Luxury 5 Star Maldives Resort in Baa Atoll"
+	description="Kihaa Resort is the most naturally beautiful and romantic island in Maldives, located next to the world famous UNESCO Biosphere Hanifaru Bay"
+	image=""
+>
+	<section class="md:h-screen md:max-h-screen overflow-hidden">
+		<Header />
+		<HeroCarousel client:load />
+	</section>
+	<JewelOfTheOceans />
+	<UnescoBiosphereReserve />
+	<Accommodation />
+	<ImageBanner
+		src="/fixed-image-1.jpg"
+	/>
+	<Experiences />
+	<ImageBanner
+		src="/fixed-image-2.jpg"
+	/>
+	<InstagramFeed />
+	<MakeReservation />
+	<Footer />
 </Layout>

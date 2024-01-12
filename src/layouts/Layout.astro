@@ -7,7 +7,11 @@ const {
 
 } = Astro.props
 
+// IMPORTING CONSTANTS
 import { WEBSITE } from "../constants/website"
+
+// IMPORTING CUSTOM STYLES
+import "../styles/custom.css"
 ---
 
 <!DOCTYPE html>
@@ -15,6 +19,9 @@ import { WEBSITE } from "../constants/website"
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
         <title>{ title }</title>
         <meta name="title" content={ title } />
         <meta name="description" content={ description } />
@@ -29,9 +36,9 @@ import { WEBSITE } from "../constants/website"
         <meta property="twitter:description" content={ description } />
         <meta property="twitter:image" content={ image } />
         <meta property="twitter:image" content={ image } />
-        <link rel="icon" type="image/x-icon" href="/favicon.webp">
+        <link rel="icon" type="image/x-icon" href="/km_favicon.png">
     </head>
-    <body class="">
+    <body class="selection:text-white selection:bg-black">
         <slot />
     </body>
 </html>
