@@ -11,7 +11,7 @@ const awards = Array(3).fill({
 
 })
 ---
-<section class="flex flex-col gap-10 items-center py-10 max-w-5xl mx-auto">
+<section class="flex flex-col gap-10 items-center py-20 max-w-6xl mx-auto">
     <div class="flex flex-col gap-6 items-center">
         <div>
             <HeadingTwo>Jewel of the Oceans</HeadingTwo>
@@ -22,17 +22,17 @@ const awards = Array(3).fill({
     <div>
         <HeadingThree>Your Award Winning Maldives Resort</HeadingThree>
         <Paragraph>Kihaa has repeatedly been recognised for the outstanding service provided for our guests</Paragraph>
-        <div class="flex gap-20 items-center pt-6">
+        <div class="flex gap-28 justify-center items-center pt-6">
             {
 
                 awards.map( ( value ) => {
 
                     return(
-                        <div class="size-32">
+                        <div class="size-28">
                             <img
                                 src={ value.image }
                                 alt=""
-                                class="size-32"
+                                class="size-28"
                             />
                         </div>
                     )
