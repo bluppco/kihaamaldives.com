@@ -25,7 +25,7 @@ const HeroCarousel = ( props ) => {
                     data.map( ( value, index ) => {
                         return (
                             <div key={ "hero-carousel-image-" + index } className="relative w-full">
-                                <div className="w-full h-96 bg-zinc-200">
+                                <div className="w-full aspect-[3/2] bg-zinc-200">
                                     <img
                                         src={ value.image }
                                         alt=""
