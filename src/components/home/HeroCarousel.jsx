@@ -14,7 +14,7 @@ const HeroCarousel = ( props ) => {
     })
 
     return (
-        <section className="w-full h-[400px] md:h-full">
+        <section className="w-full h-[400px] md:h-full md:mt-16">
             <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true } stopOnHover={ false }>
                 {
 
