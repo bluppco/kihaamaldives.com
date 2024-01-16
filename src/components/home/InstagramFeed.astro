@@ -1,0 +1,36 @@
+---
+// IMPORTING ASTRO ATOMS
+import HeadingTwo from "../../atoms/headings/Two.astro"
+import HeadingThree from "../../atoms/headings/Three.astro"
+import SmallParagraph from "../../atoms/paragraph/Small.astro"
+
+const data = Array(5).fill({
+
+    image: "fixed-image-1.jpg"
+
+})
+---
+<section class="space-y-2 py-10">
+    <HeadingTwo>#kihaamaldives</HeadingTwo>
+    <HeadingThree>Sharing your moments of paradise</HeadingThree>
+    <SmallParagraph>Keep up to date with the beautiful paradise island of Kihaa Maldives.</SmallParagraph>
+    <div class="grid grid-cols-5 gap-1 pt-4">
+        {
+
+            data.map( ( value ) => {
+
+                return(
+                    <div class="w-full aspect-square bg-zinc-200 overflow-hidden">
+                        <img
+                            src={ value.image }
+                            alt=""
+                            class="w-full h-full object-cover hover:scale-125 overflow-hidden transition-all duration-700"
+                        />
+                    </div>
+                )
+
+            })
+
+        }
+    </div>
+</section>

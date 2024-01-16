@@ -1,0 +1,34 @@
+---
+// IMPORTING ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+// IMPORTING ASTRO COMPONENTS
+import Awards from "./Awards.astro"
+import FooterLogo from "./FooterLogo.astro"
+import Reservations from "./Reservations.astro"
+import Connect from "./Connect.astro"
+import KihaaApp from "./KihaaApp.astro"
+import QuickLinks from "./QuickLinks.astro"
+import Newsletter from "./Newsletter.astro"
+import Copyright from "./Copyright.astro"
+import TalkToUs from "../common/TalkToUs.astro"
+---
+<footer>
+    <section class="bg-kmr_dim_gray py-8 md:py-20">
+        <Container>
+            <section class="grid md:grid-cols-6">
+                <FooterLogo />
+                <section class="md:col-span-5 grid md:grid-cols-3 gap-12 mt-4">
+                    <Reservations />
+                    <Awards />
+                    <QuickLinks />
+                    <Connect />
+                    <KihaaApp />
+                    <Newsletter />
+                </section>
+            </section>
+        </Container>
+    </section>
+    <Copyright />
+    <TalkToUs />
+</footer>

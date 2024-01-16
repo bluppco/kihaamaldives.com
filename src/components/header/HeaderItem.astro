@@ -1,0 +1,9 @@
+---
+const { href } = Astro.props
+---
+<li class="text-kmr_green text-sm tracking-wider uppercase hover:cursor-pointer font-montserrat group">
+    <a href={ href }>
+        <slot/>
+    </a>
+    <div class="w-0 bg-kmr_green group-hover:w-full h-[1.5px] transition-width duration-300 ease-in"></div>
+</li>

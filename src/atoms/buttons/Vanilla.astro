@@ -1,0 +1,10 @@
+---
+const { href, aria_label } = Astro.props
+---
+<div>
+    <a href={ href } aria-label={ aria_label }>
+        <button class="h-10 px-6 text-kmr_green border-2 border-kmr_green hover:bg-kmr_green hover:text-white text-sm uppercase font-medium tracking-wide transition-all duration-300">
+            <slot/>
+        </button>
+    </a>
+</div>
