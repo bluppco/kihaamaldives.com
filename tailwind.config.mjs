@@ -9,9 +9,7 @@ export default {
 
 			screens: {
 
-				'mac': '1440px',
-				...defaultTheme.screens,
-
+				'mac': '1440px'
 			},
 
 			fontFamily: {
