@@ -1,17 +1,45 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+module.exports = {
 
-export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: ["class"],
+  	content: [
+		'./pages/**/*.{js,jsx}',
+		'./components/**/*.{js,jsx}',
+		'./app/**/*.{js,jsx}',
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+  	],
+	prefix: "",
 	theme: {
 
+		container: {
+			center: true,
+			padding: "2rem",
+			screens: {
+				"2xl": "1400px",
+			},
+		},
 		extend: {
+			keyframes: {
 
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
+				},
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+			},
+			animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				'ping': 'ping 3s cubic-bezier(0,0,.2,1) infinite',
+			},
 			screens: {
 
 				'mac': '1440px'
-			},
 
+			},
 			fontFamily: {
 
 				"josefin": [ "Josefin Sans", "sans-serif" ],
@@ -28,5 +56,6 @@ export default {
 
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwindcss-animate")],
+
 }

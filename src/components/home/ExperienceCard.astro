@@ -12,11 +12,15 @@ const {
 
 } = Astro.props
 ---
-<div class="relative border border-zinc-200 p-[1px] group h-full w-full bg-cover hover:scale-110 overflow-hidden duration-300" style=`background-image: url(${ src })`>
-    <div class="absolute flex justify-center w-full bottom-0 group-hover:p-2 transition-all duration-500 bg-white group-hover:bg-white/50">
-        <div class="flex flex-col gap-2 items-center justify-end h-full w-full py-4 group-hover:p-2 group-hover:border group-hover:border-white transition-all duration-500">
+<div class="relative p-[1px] group h-full w-full overflow-hidden group border border-zinc-200">
+    <div class="absolute top-0 left-0 bg-cover h-full w-full group-hover:scale-110 duration-500" style=`background-image: url(${ src })`></div>
+    <div class="absolute flex justify-center w-full bottom-0 left-0 group-hover:p-2 transition-all duration-500 bg-white/80 group-hover:bg-white group-hover:my-4 group-hover:mx-[calc(1rem+1px)] group-hover:w-[calc(100%-2rem)]">
+        <div class="flex flex-col gap-2 items-center justify-end h-full w-full py-4 group-hover:p-2 transition-all duration-500">
             <HeadingFour>{ title }</HeadingFour>
+            <!-- BUTTON FLASH ANIMATION TO BE ADDED HERE -->
             <Button>{ button_text }</Button>
         </div>
     </div>
+    <!-- DELAY IS NOT WORKING HERE - WILL CHECK AGAIN -->
+    <div class="border border-white absolute w-[calc(100%-2rem)] h-[calc(100%-2rem)] m-4 hidden group-hover:block duration-500 delay-500 transition-all"></div>
 </div>

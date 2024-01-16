@@ -2,11 +2,26 @@ import { useState } from "react"
 
 // IMPORTING JSX ATOMS
 import YellowButtonJSX from "../../atoms/buttons/jsx/Yellow"
+import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/components/ui/button"
+import {
+
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+
+} from "@/components/ui/popover"
+import { cn } from "@/lib/utils"
+import { format } from "date-fns"
+import { CalendarIcon } from "@radix-ui/react-icons"
 
 const Reservation = ( props ) => {
 
+    // IMPORTANT
+    // IT SHOULD BE GUESTS AND NOT QUANLITY
     const [ quantity, updateQuantity ] = useState( 1 )
-
+    const [ arrivalDate, setArrivalDate ] = useState()
+    const [ departureDate, setDepartureDate ] = useState()
     const increment = () => {
 
         let update_quantity = quantity
@@ -35,21 +50,57 @@ const Reservation = ( props ) => {
             <section className="max-w-5xl mx-auto flex gap-4 justify-between">
                 <div className="flex gap-4 items-center">
                     <p className="font-josefin text-sm font-semibold uppercase text-white">Arrival</p>
-                    <input
-                        type="text"
-                        className="text-slate-700 text-xs h-8 w-40 border border-slate-300 px-4"
-                        name=""
-                        placeholder=""
-                    />
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant={"outline"}
+                                className={ cn( "w-[240px] pl-3 text-left font-normal", !arrivalDate && "text-muted-foreground" ) }
+                            >
+                                {
+
+                                    arrivalDate ? ( format(arrivalDate, "PPP") ) : ( <span>Pick arrival date</span> )
+
+                                }
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                                mode="single"
+                                selected={ arrivalDate }
+                                onSelect={ setArrivalDate }
+                                disabled={ (date) => date < new Date() }
+                                initialFocus
+                            />
+                        </PopoverContent>
+                    </Popover>
                 </div>
                 <div className="flex gap-4 items-center">
                     <p className="font-josefin text-sm font-semibold uppercase text-white">Departure</p>
-                    <input
-                        type="text"
-                        className="text-slate-700 text-xs h-8 w-40 border border-slate-300 px-4"
-                        name=""
-                        placeholder=""
-                    />
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant={"outline"}
+                                className={ cn( "w-[240px] pl-3 text-left font-normal", !departureDate && "text-muted-foreground" ) }
+                            >
+                                {
+
+                                    departureDate ? ( format(departureDate, "PPP") ) : ( <span>Pick departure date</span> )
+
+                                }
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                                mode="single"
+                                selected={ departureDate }
+                                onSelect={ setDepartureDate }
+                                disabled={ (date) => date < new Date() || date < new Date( arrivalDate ) }
+                                initialFocus
+                            />
+                        </PopoverContent>
+                    </Popover>
                 </div>
                 <div className="flex gap-4 items-center">
                     <p className="font-josefin text-sm font-semibold uppercase text-white">Guests</p>
