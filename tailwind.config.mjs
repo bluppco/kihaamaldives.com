@@ -24,6 +24,9 @@ export default {
 				"kmr_green": "#51c2b9",
 				"kmr_dim_gray": "#696969",
 
+			},
+			animation: {
+				'ping': 'ping 3s cubic-bezier(0,0,.2,1) infinite',
 			}
 
 		},
