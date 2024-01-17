@@ -47,7 +47,7 @@ const Reservation = ( props ) => {
 
     return(
         <section className="bg-kmr_green py-4">
-            <section className="max-w-5xl mx-auto flex gap-4 justify-between">
+            <section className="max-w-5xl mx-auto flex justify-between">
                 <div className="flex gap-4 items-center">
                     <p className="font-josefin text-sm font-semibold uppercase text-white">Arrival</p>
                     <Popover>
