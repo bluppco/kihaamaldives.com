@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-// IMPORTING JSX ATOMS
+// IMPORTS JSX ATOMS
 import YellowButtonJSX from "../../atoms/buttons/jsx/Yellow"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
@@ -47,7 +47,7 @@ const Reservation = ( props ) => {
 
     return(
         <section className="bg-kmr_green py-4">
-            <section className="max-w-5xl mx-auto flex gap-4 justify-between">
+            <section className="max-w-5xl mx-auto flex justify-between">
                 <div className="flex gap-4 items-center">
                     <p className="font-josefin text-sm font-semibold uppercase text-white">Arrival</p>
                     <Popover>
@@ -58,7 +58,7 @@ const Reservation = ( props ) => {
                             >
                                 {
 
-                                    arrivalDate ? ( format(arrivalDate, "PPP") ) : ( <span>Pick arrival date</span> )
+                                    arrivalDate ? ( format(arrivalDate, "PPP") ) : ( <span className="text-gray-600">Pick arrival date</span> )
 
                                 }
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -85,7 +85,7 @@ const Reservation = ( props ) => {
                             >
                                 {
 
-                                    departureDate ? ( format(departureDate, "PPP") ) : ( <span>Pick departure date</span> )
+                                    departureDate ? ( format(departureDate, "PPP") ) : ( <span className="text-gray-600">Pick departure date</span> )
 
                                 }
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -114,7 +114,7 @@ const Reservation = ( props ) => {
                                 />
                             </div>
                         </div>
-                        <div className="text-slate-700 bg-white w-10 h-8 flex items-center justify-center text-center border border-zinc-200">{ quantity }</div>
+                        <div className="text-gray-600 bg-white w-10 h-8 flex items-center justify-center text-center border border-zinc-200">{ quantity }</div>
                         <div className="text-white text-lg cursor-pointer pl-2 select-none" onClick={ () => increment() }>
                             <div className="size-7">
                                 <img
@@ -125,7 +125,7 @@ const Reservation = ( props ) => {
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <YellowButtonJSX>Book Now</YellowButtonJSX>
             </section>
         </section>

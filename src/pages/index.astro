@@ -1,8 +1,15 @@
 ---
-// IMPORTING ASTRO LAYOUTS
+import { homeAPI } from "../api/home/index"
+
+const runtime = Astro.locals.runtime;
+const data = await homeAPI( runtime.env.ENVIRONMENT )
+
+const { home_data, accommodations, experiences, meta_tags } = data
+
+// IMPORTS ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
 
-// IMPORTING ASTRO COMPONENTS
+// IMPORTS ASTRO COMPONENTS
 import Header from "../components/header/Header.astro"
 import JewelOfTheOceans from "../components/home/JewelOfTheOceans.astro"
 import UnescoBiosphereReserve from "../components/home/UnescoBiosphereReserve.astro"
@@ -13,31 +20,43 @@ import Footer from "../components/footer/Footer.astro"
 import MakeReservation from "../components/home/MakeReservation.astro"
 import ImageBanner from "../components/home/ImageBanner.astro"
 
-// IMPORTING JSX COMPONENTS
+// IMPORTS JSX COMPONENTS
 import HeroCarousel from "../components/home/HeroCarousel"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 ---
 <Layout
-	title="Kihaa Maldives Resort - Luxury 5 Star Maldives Resort in Baa Atoll"
-	description="Kihaa Resort is the most naturally beautiful and romantic island in Maldives, located next to the world famous UNESCO Biosphere Hanifaru Bay"
-	image=""
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ meta_tags.cover }
 >
 	<section class="md:h-screen md:max-h-screen overflow-hidden relative">
 		<HeaderBanner />
 		<Header />
-		<HeroCarousel client:load />
+		<HeroCarousel
+			client:load
+			data={ home_data.hero }
+		/>
 	</section>
-	<JewelOfTheOceans />
-	<UnescoBiosphereReserve />
-	<Accommodation />
-	<ImageBanner
-		src="/fixed-image-1.jpg"
+	<JewelOfTheOceans
+		jewel_of_the_oceans={ home_data.jewel_of_the_oceans }
+		award_winning_resort={ home_data.award_winning_resort }
 	/>
-	<Experiences />
-	<ImageBanner
-		src="/fixed-image-2.jpg"
+	<UnescoBiosphereReserve data={ home_data.unspoilt } />
+	<Accommodation
+		data={ home_data.accommodation }
+		carousel={ accommodations }
 	/>
-	<InstagramFeed />
-	<MakeReservation />
+	<ImageBanner
+		src={ home_data.image_banner_one.cover }
+	/>
+	<Experiences
+		experience={ home_data.experiences }
+		data={ experiences }
+	/>
+	<ImageBanner
+		src={ home_data.image_banner_two.cover }
+	/>
+	<InstagramFeed data={ home_data.instagram_feed } />
+	<MakeReservation data={ home_data.make_reservation }  />
 	<Footer />
 </Layout>

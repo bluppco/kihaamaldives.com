@@ -1,17 +1,20 @@
 ---
-// IMPORTING ASTRO LAYOUTS
+const runtime = Astro.locals.runtime
+const env = runtime.env.ENVIRONMENT
+
+// IMPORTS ASTRO LAYOUTS
 import Container from "../../layouts/Container.astro"
 
-// IMPORTING ASTRO COMPONENTS
+// IMPORTS ASTRO COMPONENTS
 import HeaderItem from "./HeaderItem.astro"
 
-// IMPORTING JSX COMPONENTS
+// IMPORTS JSX COMPONENTS
 import HeaderMobile from "./HeaderMobile"
 
-// IMPORTING ASTRO ATOMS
+// IMPORTS ASTRO ATOMS
 import YellowButton from "../../atoms/buttons/Yellow.astro"
 ---
-<header class="hidden bg-white h-16 md:flex items-center fixed top-0 w-full z-50">
+<header class={` ${ env === "staging" ? "mt-8" : "" } hidden bg-white h-16 md:flex items-center fixed top-0 w-full z-50`}>
     <Container>
         <nav class="h-full flex justify-between items-center">
             <a href="/">

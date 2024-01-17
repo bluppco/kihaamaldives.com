@@ -7,11 +7,14 @@ const {
 
 } = Astro.props
 
-// IMPORTING CONSTANTS
+// IMPORTS CONSTANTS
 import { WEBSITE } from "../constants/website"
 
-// IMPORTING CUSTOM STYLES
+// IMPORTS CUSTOM STYLES
 import "../styles/custom.css"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK } from "@/constants/cdn"
 ---
 
 <!DOCTYPE html>
@@ -29,13 +32,13 @@ import "../styles/custom.css"
         <meta property="og:url" content={ WEBSITE } />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ description } />
-        <meta property="og:image" content={ image } />
+        <meta property="og:image" content={ CDN_LINK + image } />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={ WEBSITE } />
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
-        <meta property="twitter:image" content={ image } />
-        <meta property="twitter:image" content={ image } />
+        <meta property="twitter:image" content={ CDN_LINK + image } />
+        <meta property="twitter:image" content={ CDN_LINK + image } />
         <link rel="icon" type="image/x-icon" href="/km_favicon.png">
     </head>
     <body class="selection:text-white selection:bg-kmr_green">

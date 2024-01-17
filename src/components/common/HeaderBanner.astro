@@ -1,14 +1,19 @@
 ---
-const runtime = Astro.locals.runtime;
+const runtime = Astro.locals.runtime
 const env = runtime.env.ENVIRONMENT
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/Container.astro"
 ---
 {
 
     env === "staging" &&
-    <section class="bg-kmr_green py-2 relative z-10">
-        <section class="container mx-auto px-4 sm:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-[1190px] mac:max-w-screen-xl 2xl:max-w-screen-2xl">
-            <p class="font-montserrat text-sm text-center text-white">This is staging environment created by <span class="underline underline-offset-4 font-semibold"><a href="https://blupp.co" target="_blank">Blupp Company</a></span> with some initial <span class="underline underline-offset-4 font-semibold"><a href="/benchmarking">benchmarking</a></span>. You can check the codebase on <span class="underline underline-offset-4 font-semibold"><a href="https://github.com/bluppco/kihaamaldives.com" target="_blank">Github</a></span>.</p>
-        </section>
+    <section class="bg-black fixed top-0 w-full z-[100] h-10">
+        <Container>
+            <div class="flex items-center justify-center h-full">
+                <p class="text-sm text-center text-white">This is staging environment created by <span class="underline underline-offset-4 font-semibold"><a href="https://blupp.co" target="_blank">Blupp Company</a></span> with some initial <span class="underline underline-offset-4 font-semibold"><a href="/benchmarking">benchmarking</a></span>. You can check the codebase on <span class="underline underline-offset-4 font-semibold"><a href="https://github.com/bluppco/kihaa" target="_blank">Github</a></span>.</p>
+            </div>
+        </Container>
     </section>
 
 }

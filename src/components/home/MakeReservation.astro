@@ -1,11 +1,16 @@
 ---
-// IMPORTING JSX COMPONENTS
+// IMPORTS JSX COMPONENTS
 import Reservation from "./Reservation"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "@/constants/cdn"
+
+const { data } = Astro.props
 ---
 <section>
-    <div class="w-full h-96">
+    <div class="w-full h-96 bg-zinc-200">
         <img
-            src="/fixed-image-2.jpg"
+            src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY }
             alt=""
             class="w-full h-full object-cover"
         />

@@ -1,28 +1,30 @@
 ---
-// IMPORTING ASTRO ATOMS
+// IMPORTS ASTRO ATOMS
 import HeadingTwo from "../../atoms/headings/Two.astro"
 import HeadingThree from "../../atoms/headings/Three.astro"
 import SmallParagraph from "../../atoms/paragraph/Small.astro"
 
-const data = Array(5).fill({
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
-    image: "fixed-image-1.jpg"
+const { data } = Astro.props
 
-})
+const images = data.images.sort( ( a,b ) => a.order - b.order )
 ---
 <section class="space-y-2 py-10">
-    <HeadingTwo>#kihaamaldives</HeadingTwo>
-    <HeadingThree>Sharing your moments of paradise</HeadingThree>
-    <SmallParagraph>Keep up to date with the beautiful paradise island of Kihaa Maldives.</SmallParagraph>
+    <HeadingTwo>{ data.title }</HeadingTwo>
+    <HeadingThree>{ data.sub_title }</HeadingThree>
+    <SmallParagraph>{ data.description }</SmallParagraph>
+    <p class="text-xs font-montserrat font-extralight text-center tracking-wider">[* These images will be replaced by instagram feed *]</p>
     <div class="grid grid-cols-5 gap-1 pt-4">
         {
 
-            data.map( ( value ) => {
+            images.map( ( value ) => {
 
                 return(
                     <div class="w-full aspect-square bg-zinc-200 overflow-hidden">
                         <img
-                            src={ value.image }
+                            src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                             alt=""
                             class="w-full h-full object-cover hover:scale-125 overflow-hidden transition-all duration-700"
                         />

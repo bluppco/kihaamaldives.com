@@ -1,19 +1,25 @@
 ---
-// IMPORTING ASTRO LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Container from "../layouts/Container.astro"
-
-// IMPORTING ASTRO ATOMS
-import Button from "../atoms/buttons/Vanilla.astro"
 ---
-<section class="bg-purple-50 grow h-full w-full py-20 md:pt-32 flex flex-col justify-center items-center">
+<section class="bg-kmr_green grow h-full w-full py-20 md:pt-32 flex flex-col justify-center items-center">
     <Container>
         <div class="space-y-10">
-            <p class="text-3xl md:text-6xl font-josefin uppercase text-kmr_green text-center">404 - Page not found</p>
+            <p class="text-3xl md:text-7xl font-josefin uppercase text-white text-center">404 - Page not found</p>
             <div class="md:w-[70%] mx-auto">
-                <p class="text-lg md:text-xl font-montserrat text-center">Looks like you've ventured into uncharted territory. Don't worry; even the best explorers take a wrong turn now and then. Let's get you back on track.</p>
+                <p class="text-lg md:text-xl font-montserrat text-center text-white">Looks like you've ventured into uncharted territory. Don't worry; even the best explorers take a wrong turn now and then. Let's get you back on track.</p>
             </div>
             <div class="flex justify-center mb-20">
-                <Button href="/">Go to home page</Button>
+                <!-- <Button href="/">Go to home page</Button> -->
+                <div class="w-fit overflow-hidden relative group">
+                    <a href="/" aria-label="go to home page button">
+                        <button class={`text-white bg-transparent h-12 px-8 flex justify-center items-center border border-white w-full after:w-0 after:h-full after:bg-white after:text-kmr_green after:absolute after:left-0 after:top-0 after:z-30 hover:after:w-full after:transition-[width] after:duration-300 hover:text-white`}>
+                            <div class="z-40 relative duration-200 text-sm tracking-wider uppercase group-hover:text-kmr_green">
+                                Go to home page
+                            </div>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </Container>

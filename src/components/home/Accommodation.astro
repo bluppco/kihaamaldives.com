@@ -1,34 +1,33 @@
 ---
-// IMPORTING ASTRO ATOMS
+// IMPORTS ASTRO ATOMS
 import HeadingTwo from "../../atoms/headings/Two.astro"
 import HeadingThree from "../../atoms/headings/Three.astro"
 import SmallParagraph from "../../atoms/paragraph/Small.astro"
 import Button from "../../atoms/buttons/Vanilla.astro"
 
-// IMPORTING JSX COMPONENTS
+// IMPORTS JSX COMPONENTS
 import AccommodationCarousel from "./AccommodationCarousel"
 import AccommodationImages from "./AccommodationImages"
 
-const data = Array(5).fill({
-
-    image: "hero-carousel-image-1.jpg"
-
-})
+const { data, carousel } = Astro.props
 ---
 <section class="bg-gray-50">
     <section class="grid md:grid-cols-2">
         <section class="flex flex-col gap-4 items-center justify-center p-8 md:p-20">
             <div>
-                <HeadingTwo>Accommodation</HeadingTwo>
-                <HeadingThree>Fantastic range of villas</HeadingThree>
+                <HeadingTwo>{ data.title }</HeadingTwo>
+                <HeadingThree>{ data.sub_title }</HeadingThree>
             </div>
-            <SmallParagraph>Offering a fantastic range of luxury villas, Kihaa’s villas and suites provide a home away from home. With state of the art amenities and beautiful finishes that blend into the natural paradise environment of the island.</SmallParagraph>
-            <Button>Discover More</Button>
+            <SmallParagraph>{ data.description }</SmallParagraph>
+            <Button>{ data.button_text }</Button>
         </section>
-        <AccommodationCarousel client:load />
+        <AccommodationCarousel
+            client:load
+            data={ carousel }
+        />
     </section>
     <AccommodationImages
         client:load
-        data={ data }
+        data={ data.images }
     />
 </section>
