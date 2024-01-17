@@ -8,6 +8,9 @@ import Paragraph from "../../atoms/paragraph/Vanilla.astro"
 // IMPORTS ASTRO LAYOUTS
 import Container from "../../layouts/Container.astro"
 
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
+
 const { jewel_of_the_oceans, award_winning_resort } = Astro.props
 
 const award_images = award_winning_resort.images.sort( (a,b) => a.order - b.order )
@@ -24,17 +27,17 @@ const award_images = award_winning_resort.images.sort( (a,b) => a.order - b.orde
         <div>
             <HeadingThree>{ award_winning_resort.title }</HeadingThree>
             <Paragraph>{ award_winning_resort.description }</Paragraph>
-            <div class="flex gap-12 md:gap-28 justify-center items-center pt-6">
+            <div class="flex justify-center items-center pt-6">
                 {
 
                     award_images.map( ( value ) => {
 
                         return(
-                            <div class="size-20 md:size-28">
+                            <div class="h-28 w-full">
                                 <img
-                                    src={ value.file }
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
-                                    class="size-20 md:size-28"
+                                    class="h-28 w-full object-contain"
                                 />
                             </div>
                         )

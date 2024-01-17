@@ -9,14 +9,14 @@ import Container from "../../layouts/Container.astro"
 // IMPORTS ASTRO COMPONENTS
 import ExperienceCard from "./ExperienceCard.astro"
 
-const { data } = Astro.props
+const { data, experience } = Astro.props
 ---
 <Container>
     <section class="space-y-10 py-4 md:py-10">
         <section class="space-y-2">
-            <HeadingThree>Experiences at Kihaa</HeadingThree>
+            <HeadingThree>{ experience.title }</HeadingThree>
             <div class="max-w-6xl mx-auto">
-                <SmallParagraph>Make your stay on Kihaa one full of experiences and adventures that will provide memories to last a lifetime. From exploring beneath the waves on the amazing coral reefs with Ocean dimensions dive school, to relaxing in the award-winning Kihaa Spa every moment at Kihaa is one that you will want to last a lifetime.</SmallParagraph>
+                <SmallParagraph>{ experience.description }</SmallParagraph>
             </div>
         </section>
         <section class="mt-10 gap-4 grid grid-flow-row-dense grid-cols-3 grid-rows-3">

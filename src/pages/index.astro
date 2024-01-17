@@ -49,7 +49,10 @@ import HeaderBanner from "../components/common/HeaderBanner.astro"
 	<ImageBanner
 		src={ home_data.image_banner_one.cover }
 	/>
-	<Experiences data={ experiences } />
+	<Experiences
+		experience={ home_data.experiences }
+		data={ experiences }
+	/>
 	<ImageBanner
 		src={ home_data.image_banner_two.cover }
 	/>
