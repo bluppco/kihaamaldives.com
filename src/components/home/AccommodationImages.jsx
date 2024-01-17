@@ -1,7 +1,9 @@
 import { useState } from "react"
+
+// IMPORTS CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
-// IMPORT JSX COMPONENTS
+// IMPORTS JSX COMPONENTS
 import AccommodationModal from "./AccommodationModal"
 
 const AccommodationImages = ( props ) => {
@@ -33,7 +35,7 @@ const AccommodationImages = ( props ) => {
                         return(
                             <div className="w-full aspect-[4/3] bg-zinc-200 overflow-hidden" key={ "accommodation-images-" + index } onClick={ () => openImageModal( image ) }>
                                 <img
-                                    src={ value.image }
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
                                     className="w-full h-full object-cover hover:scale-125 overflow-hidden transition-all duration-700"
                                 />

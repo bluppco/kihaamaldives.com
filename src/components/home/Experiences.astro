@@ -1,21 +1,15 @@
 ---
-// IMPORTING ASTRO ATOMS
+// IMPORTS ASTRO ATOMS
 import HeadingThree from "../../atoms/headings/Three.astro"
 import SmallParagraph from "../../atoms/paragraph/Small.astro"
 
-// IMPORTING ASTRO LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Container from "../../layouts/Container.astro"
 
-// IMPORTING ASTRO COMPONENTS
+// IMPORTS ASTRO COMPONENTS
 import ExperienceCard from "./ExperienceCard.astro"
 
-const data = Array(9).fill({
-
-    cover: "/fixed-image-1.jpg",
-    title: "Excursions",
-    button_text: "Read more"
-
-})
+const { data } = Astro.props
 ---
 <Container>
     <section class="space-y-10 py-4 md:py-10">
@@ -29,15 +23,43 @@ const data = Array(9).fill({
             <div class="w-full bg-zinc-200 col-span-1 aspect-square overflow-hidden">
                 <ExperienceCard
                     src={ data[0].cover }
-                    title={ data[0].title }
+                    title={ data[0].name }
                     button_text={ data[0].button_text }
                 />
             </div>
-            <div class="col-span-1 w-full bg-zinc-200 aspect-square">02</div>
-            <div class="col-span-1 w-full bg-zinc-200 row-span-2">03</div>
-            <div class="row-span-2 col-span-1 bg-zinc-200">04</div>
-            <div class="col-span-1 w-full bg-zinc-200 aspect-square">05</div>
-            <div class="col-span-2 row-span-1 w-full bg-zinc-200">06</div>
+            <div class="col-span-1 w-full bg-zinc-200 aspect-square">
+                <ExperienceCard
+                    src={ data[1].cover }
+                    title={ data[1].name }
+                    button_text={ data[1].button_text }
+                />
+            </div>
+            <div class="col-span-1 w-full bg-zinc-200 row-span-2">
+                <ExperienceCard
+                    src={ data[2].cover }
+                    title={ data[2].name }
+                    button_text={ data[2].button_text }
+                />
+            </div>
+            <div class="row-span-2 col-span-1 bg-zinc-200">
+                <ExperienceCard
+                    src={ data[3].cover }
+                    title={ data[3].name }
+                    button_text={ data[3].button_text }
+                />
+            </div>
+            <div class="col-span-1 w-full bg-zinc-200 aspect-square">
+                <ExperienceCard
+                    src={ data[4].cover }
+                    title={ data[4].name }
+                    button_text={ data[4].button_text }
+                />
+            </div>
+            <div class="col-span-2 row-span-1 w-full bg-zinc-200"><ExperienceCard
+                src={ data[5].cover }
+                title={ data[5].name }
+                button_text={ data[5].button_text }
+            /></div>
         </section>
     </section>
 </Container>

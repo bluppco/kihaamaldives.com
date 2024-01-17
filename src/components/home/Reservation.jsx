@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-// IMPORTING JSX ATOMS
+// IMPORTS JSX ATOMS
 import YellowButtonJSX from "../../atoms/buttons/jsx/Yellow"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
@@ -125,7 +125,7 @@ const Reservation = ( props ) => {
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <YellowButtonJSX>Book Now</YellowButtonJSX>
             </section>
         </section>
