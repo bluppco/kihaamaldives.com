@@ -11,29 +11,28 @@ const AccommodationImages = ( props ) => {
     const [ selectedIndex, updateIndex ] = useState(0)
     const { data } = props
     const [ isModalOpen, updateModalOpen ] = useState( false )
-    const [ displayImage, updateDisplayImage ] = useState( "" )
     const openImageModal = ( image ) => {
 
-        updateDisplayImage( image )
+        updateIndex( image )
         updateModalOpen( true )
 
     }
     const closeImageModal = () => {
 
-        updateDisplayImage( "")
+        updateIndex( 0 )
         updateModalOpen( false )
 
     }
 
     return (
-        <>
+        <div>
             <section className="grid grid-cols-5 gap-[1px] py-[1px]">
                 {
 
                     data.map( ( value, index ) => {
 
                         return(
-                            <div className="w-full aspect-[4/3] bg-zinc-200 overflow-hidden" key={ "accommodation-images-" + index } onClick={ () => openImageModal( image ) }>
+                            <div className="w-full aspect-[4/3] bg-zinc-200 overflow-hidden" key={ "accommodation-images-" + index } onClick={ () => openImageModal( index ) }>
                                 <img
                                     src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
@@ -47,10 +46,10 @@ const AccommodationImages = ( props ) => {
                 }
             </section>
             <section>
-                <AccommodationModal open={ isModalOpen } hideModal={ () => closeImageModal() } images={ data } displayImage={ displayImage } CDN_LINK={ CDN_LINK } IMAGE_QUALITY={ IMAGE_QUALITY } />
+                <AccommodationModal open={ isModalOpen } hideModal={ () => closeImageModal() } images={ data } displayImage={ selectedIndex } CDN_LINK={ CDN_LINK } IMAGE_QUALITY={ IMAGE_QUALITY } />
             </section>
 
-        </>
+        </div>
 
     )
 

@@ -10,8 +10,6 @@ import AccommodationCarousel from "./AccommodationCarousel"
 import AccommodationImages from "./AccommodationImages"
 
 const { data, carousel } = Astro.props
-
-const accommodation_images = data.images.sort( (a,b) => a.order - b.order )
 ---
 <section class="bg-gray-50">
     <section class="grid md:grid-cols-2">
@@ -30,6 +28,6 @@ const accommodation_images = data.images.sort( (a,b) => a.order - b.order )
     </section>
     <AccommodationImages
         client:load
-        data={ accommodation_images }
+        data={ data.images }
     />
 </section>
