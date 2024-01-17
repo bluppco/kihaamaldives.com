@@ -46,7 +46,6 @@ const AccommodationImages = ( props ) => {
 
                 }
             </section>
-
             <section>
                 <AccommodationModal open={ isModalOpen } hideModal={ () => closeImageModal() } images={ data } displayImage={ displayImage } CDN_LINK={ CDN_LINK } IMAGE_QUALITY={ IMAGE_QUALITY } />
             </section>
