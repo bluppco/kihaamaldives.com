@@ -1,4 +1,6 @@
 ---
+import { marked } from "marked"
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "../../layouts/Container.astro"
 
@@ -8,6 +10,8 @@ import { CDN_LINK, IMAGE_QUALITY } from "@/constants/cdn"
 const { data } = Astro.props
 
 const map_image = data.images.sort(( a,b ) => a.order - b.order )
+
+const html = marked.parse( data.description )
 ---
 <section class="md:h-screen flex justify-center items-center w-full relative bg-no-repeat" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
     <Container>
@@ -29,7 +33,7 @@ const map_image = data.images.sort(( a,b ) => a.order - b.order )
                 <div class="border-b pb-2 border-gray-400">
                     <h2 class="text-kmr_green uppercase text-3xl font-josefin text-center md:text-left">{ data.title }</h2>
                 </div>
-                <p class="font-montserrat font-extralight tracking-wider text-sm text-center md:text-left">{ data.description }</p>
+                <section set:html={ html } class="markdown" />
             </section>
             <section class="md:hidden">
                 <div class="h-80 w-full">

@@ -10,3 +10,9 @@
 .carousel.carousel-slider{
     overflow: inherit !important;
 }
+
+.markdown p {
+
+    @apply font-montserrat font-extralight tracking-wider text-sm text-center md:text-left py-2 ;
+
+}
