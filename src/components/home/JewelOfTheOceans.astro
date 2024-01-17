@@ -1,42 +1,43 @@
 ---
-// IMPORTING ASTRO ATOMS
+// IMPORTS ASTRO ATOMS
 import HeadingOne from "../../atoms/headings/One.astro"
 import HeadingTwo from "../../atoms/headings/Two.astro"
 import HeadingThree from "../../atoms/headings/Three.astro"
 import Paragraph from "../../atoms/paragraph/Vanilla.astro"
 
-// IMPORTING ASTRO LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Container from "../../layouts/Container.astro"
 
-const awards = Array(3).fill({
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
-    image: "award.png"
+const { jewel_of_the_oceans, award_winning_resort } = Astro.props
 
-})
+const award_images = award_winning_resort.images.sort( (a,b) => a.order - b.order )
 ---
 <Container>
     <section class="flex flex-col gap-8 md:gap-10 items-center py-8 md:py-20 md:max-w-6xl mx-auto">
         <div class="flex flex-col gap-4 md:gap-6 items-center">
             <div>
-                <HeadingTwo>Jewel of the Oceans</HeadingTwo>
-                <HeadingOne>Kihaa Maldives</HeadingOne>
+                <HeadingTwo>{ jewel_of_the_oceans.title }</HeadingTwo>
+                <HeadingOne>{ jewel_of_the_oceans.sub_title }</HeadingOne>
             </div>
-            <Paragraph>Kihaa Maldives is one of the most naturally beautiful Islands in the Maldives with a stunning lagoon with a thriving coral house reef. Located on the world famous UNESCO heritage site of Hanifaru Bay it is also one of the best destinations for those wanting to experience the incredible manta ray.</Paragraph>
+            <Paragraph>{ jewel_of_the_oceans.description }</Paragraph>
         </div>
         <div>
-            <HeadingThree>Your Award Winning Maldives Resort</HeadingThree>
-            <Paragraph>Kihaa has repeatedly been recognised for the outstanding service provided for our guests</Paragraph>
-            <div class="flex gap-12 md:gap-28 justify-center items-center pt-6">
+            <HeadingThree>{ award_winning_resort.title }</HeadingThree>
+            <Paragraph>{ award_winning_resort.description }</Paragraph>
+            <div class="flex justify-center items-center pt-6">
                 {
 
-                    awards.map( ( value ) => {
+                    award_images.map( ( value ) => {
 
                         return(
-                            <div class="size-20 md:size-28">
+                            <div class="h-28 w-full">
                                 <img
-                                    src={ value.image }
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
-                                    class="size-20 md:size-28"
+                                    class="h-28 w-full object-contain"
                                 />
                             </div>
                         )

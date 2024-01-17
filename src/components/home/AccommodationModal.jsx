@@ -100,7 +100,7 @@ const AcommodationModal = ( props ) => {
                         </div>
                         <div className="grow">
                             <img
-                                src={ images_array[ displayIndex ]?.image }
+                                src={ CDN_LINK + images_array[ displayIndex ]?.image + "?quality=" + IMAGE_QUALITY }
                                 className="w-full h-full object-cover"
                             />
                         </div>

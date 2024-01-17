@@ -1,10 +1,12 @@
 ---
 const { href, aria_label } = Astro.props
 ---
-<div>
+<div class="w-fit overflow-hidden relative group">
     <a href={ href } aria-label={ aria_label }>
-        <button class="h-10 px-6 text-kmr_green border-2 border-kmr_green hover:bg-kmr_green hover:text-white text-sm uppercase font-medium tracking-wide transition-all duration-300">
-            <slot/>
+        <button class={`text-kmr_green bg-white h-10 px-6 flex justify-center items-center border border-kmr_green w-full after:w-0 after:h-full after:bg-kmr_green after:text-white after:absolute after:left-0 after:top-0 after:z-30 hover:after:w-full after:transition-[width] after:duration-300 hover:text-white`}>
+            <div class="z-40 relative duration-200 text-sm tracking-wider uppercase">
+                <slot />
+            </div>
         </button>
     </a>
 </div>

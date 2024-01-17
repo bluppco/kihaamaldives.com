@@ -1,18 +1,16 @@
-// IMPORTING REACT RESPONSIVE CAROUSEL
+// IMPORTS REACT RESPONSIVE CAROUSEL
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 
-// IMPORTING CONSTANTS
+// IMPORTS CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
 const HeroCarousel = ( props ) => {
 
-    const data = Array(2).fill({
+    const { data } = props
 
-        image: "hero-carousel-image-1.jpg"
-
-    })
+    const hero_carousel_images = data.images.sort( (a,b) => a.order - b.order )
 
     return (
         <section className="w-full h-[400px] md:h-full md:mt-16 group">
@@ -42,12 +40,12 @@ const HeroCarousel = ( props ) => {
             >
                 {
 
-                    data.map( ( value, index ) => {
+                    hero_carousel_images.map( ( value, index ) => {
                         return (
                             <div key={ "hero-carousel-image-" + index } className="relative w-full">
                                 <div className="w-full h-screen bg-zinc-200">
                                     <img
-                                        src={ value.image }
+                                        src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                         alt=""
                                         className="w-full h-full object-cover"
                                     />

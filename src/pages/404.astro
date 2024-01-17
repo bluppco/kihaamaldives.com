@@ -1,8 +1,15 @@
 ---
-// IMPORT ASTRO LAYOUTS
+import { homeAPI } from "../api/home/index"
+
+const runtime = Astro.locals.runtime;
+const data = await homeAPI( runtime.env.ENVIRONMENT )
+
+const { meta_tags } = data
+
+// IMPORTS ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
 
-// IMPORT ASTRO COMPONENTS
+// IMPORTS ASTRO COMPONENTS
 import Footer from "../components/footer/Footer.astro"
 import Header from "../components/header/Header.astro"
 import NotFoundView from "../components/NotFoundView.astro"

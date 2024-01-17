@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 
-// IMPORTING COMPONENTS
+// IMPORTS COMPONENTS
 import HeaderMobileItem from "./HeaderMobileItem"
 
 const HeaderMobile = () => {
