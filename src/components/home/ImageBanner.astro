@@ -5,7 +5,7 @@ import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 const { src } = Astro.props
 ---
 <section
-    class="h-72 md:h-[600px] bg-fixed bg-zinc-200 bg-no-repeat"
+    class="h-72 md:h-[600px] bg-fixed bg-zinc-200 bg-no-repeat bg-cover bg-center"
     style=`background-image: url(${ CDN_LINK + src + "?quality=" + IMAGE_QUALITY })`
 >
 </section>
