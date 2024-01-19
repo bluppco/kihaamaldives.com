@@ -57,7 +57,7 @@ const HeaderMobile = () => {
                         className="grow"
                     >
                         <div className="flex flex-col gap-1 items-center justify-center h-full z-10">
-                            <ul className="flex flex-col gap-8">
+                            <ul className="flex flex-col justify-center items-center gap-8">
                                 <HeaderMobileItem>Classic</HeaderMobileItem>
                                 <HeaderMobileItem>Luxury</HeaderMobileItem>
                                 <HeaderMobileItem>Hanifaru Bay</HeaderMobileItem>
