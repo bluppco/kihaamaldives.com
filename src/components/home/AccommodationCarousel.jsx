@@ -51,7 +51,7 @@ const HeroCarousel = ( props ) => {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="absolute bottom-0 flex justify-center w-full py-2 bg-black/20">
+                                <div className="absolute bottom-0 flex justify-center w-full py-2 bg-black/50">
                                 <HeadingFourWhiteJSX>{ value.name }</HeadingFourWhiteJSX>
                                 </div>
                             </div>
