@@ -117,7 +117,7 @@ const Reservation = ( props ) => {
                                 </div>
                             </div>
                             <div className="text-gray-600 bg-white w-10 h-8 flex items-center justify-center text-center border border-zinc-200">{ quantity }</div>
-                            <div className="text-white text-lg cursor-pointer md:pl-2 select-none" onClick={ () => increment() }>
+                            <div className="text-white text-lg cursor-pointer select-none" onClick={ () => increment() }>
                                 <div className="size-7">
                                     <img
                                         src="/icons/increment.svg"

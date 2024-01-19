@@ -16,7 +16,7 @@ const images = data.images.sort( ( a,b ) => a.order - b.order )
     <HeadingThree>{ data.sub_title }</HeadingThree>
     <SmallParagraph>{ data.description }</SmallParagraph>
     <p class="text-xs font-montserrat font-extralight text-center tracking-wider">[* These images will be replaced by instagram feed *]</p>
-    <div class="grid grid-cols-5 gap-1 pt-4">
+    <div class="grid md:grid-cols-5 gap-4 md:gap-1 pt-4">
         {
 
             images.map( ( value ) => {
