@@ -13,7 +13,7 @@ const map_image = data.images.sort(( a,b ) => a.order - b.order )
 
 const html = marked.parse( data.description )
 ---
-<section class="md:h-screen flex justify-center items-center w-full relative bg-no-repeat" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
+<section class="md:h-screen flex justify-center items-center w-full relative bg-no-repeat py-4" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
     <Container>
         <section class="grid md:grid-cols-3 gap-4 z-10">
             <section class="hidden md:block">
