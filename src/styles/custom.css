@@ -1,6 +1,12 @@
 .control-dots{
     bottom: 80px !important;
 }
+
+@media only screen and (max-width: 767px) {
+    .control-dots {
+        bottom: 10px !important;
+    }
+}
 .carousel .control-dots .dot{
     /* background-color: #FFFFFF !important; */
     box-shadow: none;

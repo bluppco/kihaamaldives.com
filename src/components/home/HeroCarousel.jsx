@@ -14,16 +14,16 @@ const HeroCarousel = ( props ) => {
 
     return (
         <section className="w-full h-[400px] md:h-full md:mt-16 group">
-            <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }
+            <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true }
                 renderArrowPrev={( onClickHandler, hasPrev, label ) =>
                 hasPrev && (
                         <button
                             type="button"
                             onClick={ onClickHandler }
                             title={ label }
-                            className="absolute top-0 left-1 z-10 flex items-center h-full"
+                            className="absolute top-0 left-1 z-10 flex items-center h-full mt-10 md:mt-0"
                         >
-                            <ChevronLeftIcon className="text-white size-12 hidden group-hover:block"/>
+                            <ChevronLeftIcon className="text-white size-8 md:size-12 md:hidden md:group-hover:block"/>
                         </button>
                 )}
                 renderArrowNext={( onClickHandler, hasNext, label ) =>
@@ -32,9 +32,9 @@ const HeroCarousel = ( props ) => {
                             type="button"
                             onClick={ onClickHandler }
                             title={ label }
-                            className="absolute top-0 right-1 z-10 flex items-center h-full"
+                            className="absolute top-0 right-1 z-10 flex items-center h-full mt-10 md:mt-0"
                         >
-                            <ChevronRightIcon className="text-white size-12 hidden group-hover:block"/>
+                            <ChevronRightIcon className="text-white size-8 md:size-12 md:hidden md:group-hover:block"/>
                         </button>
                 )}
             >
@@ -43,11 +43,11 @@ const HeroCarousel = ( props ) => {
                     hero_carousel_images.map( ( value, index ) => {
                         return (
                             <div key={ "hero-carousel-image-" + index } className="relative w-full">
-                                <div className="w-full h-screen bg-zinc-200">
+                                <div className="w-full h-[400px] md:h-screen bg-zinc-200">
                                     <img
                                         src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                         alt=""
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full md:object-cover"
                                     />
                                 </div>
                             </div>
