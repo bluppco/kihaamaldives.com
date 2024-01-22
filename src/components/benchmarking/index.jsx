@@ -33,7 +33,6 @@ const BenchmarkingJSX = ( props ) => {
     }
     const formatPrice = ( hits, unit, discount ) => {
 
-        console.log( hits )
         if( hits < discount )
             return "$" + 0
         else {
@@ -97,7 +96,7 @@ const BenchmarkingJSX = ( props ) => {
                         <TableHead className="text-right">Cloudfront Cost ($0.1/GB)</TableHead>
                         <TableHead className="text-right">Vercel Cost ($0.4/GB)</TableHead>
                         <TableHead className="text-right">Prismic Cost ($0.2/GB)</TableHead>
-                        <TableHead className="text-right">Blupp Cost ($0.05/GB)</TableHead>
+                        <TableHead className="text-right font-semibold">Blupp Cost ($0.05/GB)</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -112,10 +111,10 @@ const BenchmarkingJSX = ( props ) => {
                                     <TableCell className="text-right">{ formatNumber (value.current_size * value.hits) }</TableCell>
                                     <TableCell className="text-right">{ formatNumber( value.blupp_size * value.hits ) }</TableCell>
                                     <TableCell className="text-right">{ formatNumber( (value.current_size * value.hits) -  (value.blupp_size * value.hits) ) }</TableCell>
-                                    <TableCell className="text-right"$>{ formatPrice( value.current_size * value.hits , .1, 1000000 ) }</TableCell>
-                                    <TableCell className="text-right"$>{ formatPrice( value.current_size * value.hits , .4, 1000000 ) }</TableCell>
-                                    <TableCell className="text-right"$>{ formatPrice( value.current_size * value.hits , .2, 500000 ) }</TableCell>
-                                    <TableCell className="text-right"$>{ formatPrice( value.blupp_size * value.hits , .05, 1000000 ) }</TableCell>
+                                    <TableCell className="text-right">{ formatPrice( value.current_size * value.hits , .1, 1000000 ) }</TableCell>
+                                    <TableCell className="text-right">{ formatPrice( value.current_size * value.hits , .4, 1000000 ) }</TableCell>
+                                    <TableCell className="text-right">{ formatPrice( value.current_size * value.hits , .2, 500000 ) }</TableCell>
+                                    <TableCell className="text-right font-semibold">{ formatPrice( value.blupp_size * value.hits , .05, 1000000 ) }</TableCell>
                                 </TableRow>
                             )
 
