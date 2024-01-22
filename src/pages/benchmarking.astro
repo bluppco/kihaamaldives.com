@@ -1,74 +1,28 @@
 ---
-// IMPORTS ASTRO LAYOUTS
-import Container from "../layouts/Container.astro"
-
 // IMPORTS BENCHMARKING FROM MD
-import { frontmatter as benchmarking } from "../content/benchmarking/home.mdx"
+import { frontmatter as benchmarking } from "@/content/benchmarking/home.mdx"
+
+// IMPORT LAYOUTS
+import Layout from "@/layouts/Layout.astro"
+import Container from "@/layouts/Container.astro"
+
+// IMPORT COMPONENTS
+import Footer from "@/components/footer/Footer.astro"
+import Header from "@/components/header/Header.astro"
+import HeaderBanner from "@/components/common/HeaderBanner.astro"
+import BenchmarkingJSX from "@/components/benchmarking"
 ---
-
-<section>
-    <Container>
-        { benchmarking.page }
-        <div class="flex bg-kmr_green h-8 w-full rounded">
-        {
-
-            benchmarking.existing_statistics.map( ( type ) => {
-
-                return (
-                    <div style={{"width":`${ parseFloat( type.size / benchmarking.existing_size * 100).toFixed(2) }%`}}>
-                        <div>{ type.name }</div>
-                    </div>
-                )
-
-            })
-
-        }
-        </div>
-        {
-
-            benchmarking.existing_statistics.map( ( type ) => {
-
-                return (
-                    <div>
-                        <div>{ type.name }</div>
-                        <div>{ type.size }</div>
-                        <div>{ parseFloat( type.size / benchmarking.existing_size * 100 ).toFixed(2) }%</div>
-                    </div>
-                )
-
-            })
-
-        }
-        <section>Blupp</section>
-        <div class="flex bg-kmr_green h-8 w-full rounded">
-            {
-
-                benchmarking.blupp_statistics.map( ( type ) => {
-
-                    return (
-                        <div style={{"width":`${ parseFloat( type.size / benchmarking.blupp_size * 100).toFixed(2) }%`}}>
-                            <div>{ type.name }</div>
-                        </div>
-                    )
-
-                })
-
-            }
-            </div>
-            {
-
-                benchmarking.blupp_statistics.map( ( type ) => {
-
-                    return (
-                        <div>
-                            <div>{ type.name }</div>
-                            <div>{ type.size }</div>
-                            <div>{ parseFloat( type.size / benchmarking.blupp_size * 100 ).toFixed(2) }%</div>
-                        </div>
-                    )
-
-                })
-
-            }
-    </Container>
-</section>
+<Layout
+	title={ "Benchmarking" }
+	description={ "Benchmarking" }
+	image=""
+>
+    <HeaderBanner />
+    <Header />
+    <section class="py-40">
+        <Container>
+            <BenchmarkingJSX client:load data={ benchmarking }/>
+        </Container>
+    </section>
+    <Footer />
+</Layout>
