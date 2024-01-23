@@ -3,7 +3,8 @@ import { homeAPI } from "../api/home/index"
 
 const runtime = Astro.locals.runtime;
 const data = await homeAPI( runtime.env.ENVIRONMENT )
-
+const env = runtime.env.ENVIRONMENT
+console.log(env)
 const { home_data, accommodations, experiences, meta_tags } = data
 
 // IMPORTS ASTRO LAYOUTS
