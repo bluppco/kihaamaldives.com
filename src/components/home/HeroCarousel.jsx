@@ -13,7 +13,7 @@ const HeroCarousel = ( props ) => {
     const hero_carousel_images = data.images.sort( (a,b) => a.order - b.order )
 
     return (
-        <section className={` ${ env === "staging" ? "mt-32" : "mt-16" } w-full h-[400px] md:h-full group`}>
+        <section className={` ${ env === "staging" ? "mt-32 md:mt-24" : "mt-16" } w-full h-[400px] md:h-full group`}>
             <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true }
                 renderArrowPrev={( onClickHandler, hasPrev, label ) =>
                 hasPrev && (
