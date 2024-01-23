@@ -60,12 +60,12 @@ const HeaderMobile = ( props ) => {
                     >
                         <div className="flex flex-col gap-1 items-center justify-center h-full z-10">
                             <ul className="flex flex-col justify-center items-center gap-8">
-                                <HeaderMobileItem>Classic</HeaderMobileItem>
-                                <HeaderMobileItem>Luxury</HeaderMobileItem>
-                                <HeaderMobileItem>Hanifaru Bay</HeaderMobileItem>
-                                <HeaderMobileItem>Taste of culture</HeaderMobileItem>
-                                <HeaderMobileItem>Horses in Maldives</HeaderMobileItem>
-                                <HeaderMobileItem>More</HeaderMobileItem>
+                                <HeaderMobileItem href="/accommodation">Classic</HeaderMobileItem>
+                                <HeaderMobileItem href="/luxury-collection">Luxury</HeaderMobileItem>
+                                <HeaderMobileItem href="/hanifaru-bay">Hanifaru Bay</HeaderMobileItem>
+                                <HeaderMobileItem href="/wine-and-dine">Taste of culture</HeaderMobileItem>
+                                <HeaderMobileItem href="/horse-riding">Horses in Maldives</HeaderMobileItem>
+                                <HeaderMobileItem href="/about">More</HeaderMobileItem>
                             </ul>
                         </div>
                     </motion.div>
