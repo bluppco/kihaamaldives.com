@@ -1,10 +1,4 @@
 ---
-import { homeAPI } from "../api/home/index"
-
-const runtime = Astro.locals.runtime;
-const data = await homeAPI( runtime.env.ENVIRONMENT )
-
-const { meta_tags } = data
 
 // IMPORTS ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
