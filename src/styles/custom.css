@@ -9,9 +9,14 @@
 }
 .carousel .control-dots .dot{
     background-color: #FFFFFF !important;
+    opacity: 1 !important;
     box-shadow: none !important;
     width: 12px !important;
     height: 12px !important;
+}
+
+.carousel .control-dots .dot:hover{
+    opacity: 0.8 !important;
 }
 
 .carousel .control-dots .dot.selected{
