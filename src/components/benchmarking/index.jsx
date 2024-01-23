@@ -16,19 +16,19 @@ const BenchmarkingJSX = ( props ) => {
     const formatNumber = ( number ) => {
 
         if( number < 100)
-            return number + " MB"
-        if( number/1000 < 1000)
-            return number/1000 + " GB"
-        if( number/1000 < 10000 )
-            return number/1000000 + " TB"
-        if( number/1000 < 100000 )
-            return number/1000000 + " TB"
-        if( number/1000 < 1000000 )
-            return number/1000000 + " TB"
-        if( number/1000 < 10000000 )
-            return number/1000000000 + " PB"
-
-        return number
+            return (number).toFixed(2) + " MB"
+        else if( number/1000 < 1000)
+            return (number/1000).toFixed(2) + " GB"
+        else if( number/1000 < 10000 )
+            return (number/1000000).toFixed(2) + " TB"
+        else if( number/1000 < 100000 )
+            return (number/1000000).toFixed(2) + " TB"
+        else if( number/1000 < 1000000 )
+            return (number/1000000).toFixed(2) + " TB"
+        else if( number/1000 < 10000000 )
+            return (number/1000000000).toFixed(2) + " PB"
+        else
+            return number
 
     }
     const formatPrice = ( hits, unit, discount ) => {
@@ -64,11 +64,10 @@ const BenchmarkingJSX = ( props ) => {
                 <TableBody>
                     {
 
-                        data.data.map( ( value ) => {
+                        data.data.map( ( value, index ) => {
 
-                            console.log( value )
                             return (
-                                <TableRow className={ value.type === "Total" ? "font-semibold" : "" }>
+                                <TableRow className={ value.type === "Total" ? "font-semibold" : "" }  key={ "type-split-" + index }>
                                     <TableCell className="font-semibold">{ value.type }</TableCell>
                                     <TableCell className="text-center">{ value.current_size }</TableCell>
                                     <TableCell className="text-center">{ ( value.current_size /1000).toFixed(2) }</TableCell>
@@ -102,11 +101,11 @@ const BenchmarkingJSX = ( props ) => {
                 <TableBody>
                     {
 
-                        data.bandwidth.map( ( value ) => {
+                        data.bandwidth.map( ( value, index ) => {
 
                             console.log( value )
                             return (
-                                <TableRow className={ value.type === "Total" ? "font-semibold" : "" }>
+                                <TableRow className={ value.type === "Total" ? "font-semibold" : "" } key={ "bandwidth-saved-" + index }>
                                     <TableCell className="font-semibold">{ value.hits_text }</TableCell>
                                     <TableCell className="text-right">{ formatNumber (value.current_size * value.hits) }</TableCell>
                                     <TableCell className="text-right">{ formatNumber( value.blupp_size * value.hits ) }</TableCell>
