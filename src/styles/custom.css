@@ -8,10 +8,10 @@
     }
 }
 .carousel .control-dots .dot{
-    /* background-color: #FFFFFF !important; */
+    background-color: #FFFFFF !important;
     box-shadow: none;
-    width: 10px;
-    height: 10px;
+    width: 12px !important;
+    height: 12px !important;
 }
 .carousel.carousel-slider{
     overflow: inherit !important;
