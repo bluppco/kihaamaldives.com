@@ -4,12 +4,14 @@ import { useState } from "react"
 // IMPORTS COMPONENTS
 import HeaderMobileItem from "./HeaderMobileItem"
 
-const HeaderMobile = () => {
+const HeaderMobile = ( props ) => {
+
+    const { env } = props
 
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden bg-white px-6 py-4 fixed z-20 w-full border-b border-b-zinc-200">
+        <header className={` ${ env === "staging" ? "mt-16" : "" } md:hidden bg-white px-6 py-4 fixed z-20 w-full border-b border-b-zinc-200`}>
             <div className="flex justify-between items-center z-20">
                 <a href="/">
                     <div className="w-20 aspect-[5/2]">

@@ -27,17 +27,17 @@ const award_images = award_winning_resort.images.sort( (a,b) => a.order - b.orde
         <div>
             <HeadingThree>{ award_winning_resort.title }</HeadingThree>
             <Paragraph>{ award_winning_resort.description }</Paragraph>
-            <div class="flex justify-center items-center pt-6">
+            <div class="flex justify-center items-center gap-4 pt-6">
                 {
 
                     award_images.map( ( value ) => {
 
                         return(
-                            <div class="h-28 w-full">
+                            <div class="h-24 md:h-28 w-full">
                                 <img
                                     src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
-                                    class="h-28 w-full object-contain"
+                                    class="h-24 md:h-28 w-full object-contain"
                                 />
                             </div>
                         )

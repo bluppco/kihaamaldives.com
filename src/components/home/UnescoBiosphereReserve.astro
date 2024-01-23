@@ -15,8 +15,8 @@ const html = marked.parse( data.description )
 ---
 <section class="md:h-screen 2xl:h-[720px] flex justify-center items-center relative bg-no-repeat py-4 bg-cover" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
     <Container>
-        <section class="grid md:grid-cols-3 gap-4 z-10 h-full">
-            <section class="hidden md:flex items-center">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 z-10 h-full md:order-none">
+            <section class="flex items-center order-last md:order-none">
                 <div class="h-96 w-full relative">
                     <img
                         src={ CDN_LINK + map_image[0].file + "?quality=" + IMAGE_QUALITY }
@@ -34,15 +34,6 @@ const html = marked.parse( data.description )
                     <h2 class="text-kmr_green uppercase text-3xl font-josefin text-center md:text-left">{ data.title }</h2>
                 </div>
                 <section set:html={ html } class="markdown" />
-            </section>
-            <section class="md:hidden">
-                <div class="h-80 w-full">
-                    <img
-                        src={ CDN_LINK + map_image[0].file + "?quality=" + IMAGE_QUALITY }
-                        alt=""
-                        class="w-full h-full object-contain"
-                    />
-                </div>
             </section>
         </section>
     </Container>

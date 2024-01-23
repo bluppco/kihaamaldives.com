@@ -47,7 +47,7 @@ const HeroCarousel = ( props ) => {
                                     <img
                                         src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                         alt=""
-                                        className="w-full h-full md:object-cover"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             </div>
