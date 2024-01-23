@@ -3,6 +3,7 @@ import { homeAPI } from "../api/home/index"
 
 const runtime = Astro.locals.runtime;
 const data = await homeAPI( runtime.env.ENVIRONMENT )
+const env = runtime.env.ENVIRONMENT
 
 const { home_data, accommodations, experiences, meta_tags } = data
 
@@ -35,6 +36,7 @@ import HeaderBanner from "../components/common/HeaderBanner.astro"
 		<HeroCarousel
 			client:load
 			data={ home_data.hero }
+			env={ env }
 		/>
 	</section>
 	<JewelOfTheOceans
