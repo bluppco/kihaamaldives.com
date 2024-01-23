@@ -1,6 +1,6 @@
 ---
 const runtime = Astro.locals.runtime
-const env = runtime.env.ENVIRONMENT
+const env = runtime ? runtime.env.ENVIRONMENT : "staging"
 
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/Container.astro"
