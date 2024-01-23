@@ -54,8 +54,8 @@ const BenchmarkingJSX = ( props ) => {
                         <TableHead className="w-[100px]">Type</TableHead>
                         <TableHead className="text-center">Current Size (Kb)</TableHead>
                         <TableHead className="text-center">Current Size (Mb)</TableHead>
-                        <TableHead className="text-center">Blupp Size (Kb)</TableHead>
-                        <TableHead className="text-center">Blupp Size (Mb)</TableHead>
+                        <TableHead className="text-center">Profitable Rooms Size (Kb)</TableHead>
+                        <TableHead className="text-center">Profitable Rooms Size (Mb)</TableHead>
                         <TableHead className="text-center">Change (Mb)</TableHead>
                         <TableHead className="text-center">Change %</TableHead>
                         <TableHead className="text-center">Less %</TableHead>
@@ -91,12 +91,12 @@ const BenchmarkingJSX = ( props ) => {
                     <TableRow>
                         <TableHead className="w-[100px]">Hits</TableHead>
                         <TableHead className="text-right">Current Bandwidth</TableHead>
-                        <TableHead className="text-right">Blupp Bandwidth</TableHead>
+                        <TableHead className="text-right">Profitable Rooms Bandwidth</TableHead>
                         <TableHead className="text-right">Saved Bandwidth</TableHead>
                         <TableHead className="text-right">Cloudfront Cost ($0.1/GB)</TableHead>
                         <TableHead className="text-right">Vercel Cost ($0.4/GB)</TableHead>
                         <TableHead className="text-right">Prismic Cost ($0.2/GB)</TableHead>
-                        <TableHead className="text-right font-semibold">Blupp Cost ($0.05/GB)</TableHead>
+                        <TableHead className="text-right font-semibold">Profitable Rooms Cost ($0.05/GB)</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
